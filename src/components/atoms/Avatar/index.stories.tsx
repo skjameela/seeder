@@ -1,18 +1,17 @@
 import avatar from '@Assets/icons/avtar.svg'
-import { Meta, StoryFn } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import AvatarComponent from './index'
 
 export default {
   component: AvatarComponent,
   tags: ['autodocs'],
-} as Meta<typeof AvatarComponent>
+} satisfies Meta<typeof AvatarComponent>
 
-const Template: StoryFn<typeof AvatarComponent> = (args) => (
-  <AvatarComponent {...args} />
-)
+type Story = StoryObj<typeof AvatarComponent>
 
-export const AvatarIcon = Template.bind({})
-AvatarIcon.args = {
-  src: avatar,
-  alt: 'account icon',
+export const Example: Story = {
+  args: {
+    src: avatar,
+    alt: 'account icon',
+  },
 }
