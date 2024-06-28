@@ -14,9 +14,9 @@
 #     name: FE SonarCloud
 #     runs-on: ubuntu-latest
 #     timeout-minutes: 10
-#     defaults:
-#       run:
-#         working-directory: ./WebpackReactTemplate
+# defaults:
+#   run:
+#     working-directory: ./WebpackReactTemplate
 #     steps:
 #       - uses: actions/checkout@v3
 #         with:
@@ -70,7 +70,9 @@ jobs:
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./WebpackReactTemplate
     steps:
       - uses: actions/checkout@v3
         with:
