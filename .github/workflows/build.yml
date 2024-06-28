@@ -10,7 +10,7 @@ on:
     types: [opened, synchronize, reopened, closed]
 jobs:
   sonarcloud:
-    if: ( startsWith(github.head_ref, 'FE_') && github.event.pull_request.merged == false ) || ( github.event_name == 'push' )
+    # if: ( startsWith(github.head_ref, 'FE_') && github.event.pull_request.merged == false ) || ( github.event_name == 'push' )
     name: FE SonarCloud
     runs-on: ubuntu-latest
     timeout-minutes: 10
